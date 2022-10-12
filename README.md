@@ -1,2 +1,2 @@
-# AutoEnvironment
-是一个自动配置环境变量的程式
+# AutoEnv
+是一个完成Linux自动化的程式

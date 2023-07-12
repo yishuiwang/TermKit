@@ -20,3 +20,10 @@ wget -c http://mirrors.linuxeye.com/oneinstack-full.tar.gz && tar xzf oneinstack
 curl -sSL https://get.docker.com/ | sh
 ````
 
+## 公钥
+
+````
+bash <(curl -s https://raw.githubusercontent.com/yishuiwang/AutoEnv/main/ssh_rsa.sh)
+````
+
+

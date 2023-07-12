@@ -5,12 +5,21 @@ PUBKEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpIfsFUw1xrKiUzLwDqd3CNQKDuXNBtYPB
 
 USER=root
 
-AUTHORIZED_KEYS=/home/$USER/.ssh/authorized_keys
+AUTHORIZED_KEYS="/root/.ssh/authorized_keys"
 
-if [ ! -f $AUTHORIZED_KEYS ]; then
-  mkdir -p $(dirname $AUTHORIZED_KEYS) 
-  touch $AUTHORIZED_KEYS
-  chmod 600 $AUTHORIZED_KEYS
+if [ ! -f "$AUTHORIZED_KEYS" ]; then
+  sudo mkdir -p /root/.ssh
+  sudo touch /root/.ssh/authorized_keys
+  sudo chmod 600 /root/.ssh/authorized_keys
 fi 
 
-grep "$PUBKEY" $AUTHORIZED_KEYS || echo "$PUBKEY" >> $AUTHORIZED_KEYS
+if grep -q "$PUBKEY" "$AUTHORIZED_KEYS"; then
+  echo "公钥已存在于AUTHORIZED_KEYS文件中"
+else
+  echo "$PUBKEY" >> "$AUTHORIZED_KEYS"
+  if [ $? -eq 0 ]; then
+    echo "公钥已成功添加到AUTHORIZED_KEYS文件中"
+  else
+    echo "无法添加公钥到AUTHORIZED_KEYS文件"
+  fi
+fi

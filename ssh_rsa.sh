@@ -8,8 +8,9 @@ USER=root
 AUTHORIZED_KEYS=/home/$USER/.ssh/authorized_keys
 
 if [ ! -f $AUTHORIZED_KEYS ]; then
+  mkdir -p $(dirname $AUTHORIZED_KEYS) 
   touch $AUTHORIZED_KEYS
   chmod 600 $AUTHORIZED_KEYS
-fi
+fi 
 
 grep "$PUBKEY" $AUTHORIZED_KEYS || echo "$PUBKEY" >> $AUTHORIZED_KEYS

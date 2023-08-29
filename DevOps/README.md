@@ -1,3 +1,10 @@
+## 1panel
+地址 https://github.com/1Panel-dev/1Panel
+
+```
+curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh && sudo bash quick_start.sh
+```
+
 ## Lnmp
 
 官网 https://lnmp.org/
@@ -23,6 +30,10 @@ curl -sSL https://get.docker.com/ | sh
 ## 公钥
 
 ````
-bash <(curl -s https://raw.githubusercontent.com/yishuiwang/AutoEnv/main/ssh_rsa.sh)
+bash <(curl -s https://raw.githubusercontent.com/yishuiwang/TermKit/main/DevOps/ssh_rsa.sh)
 ````
+
+```
+bash <(curl -s https://raw.githubusercontent.com/yishuiwang/TermKit/main/DevOps/ssh_ed25519.sh)
+```
 

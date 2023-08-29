@@ -26,4 +26,3 @@ curl -sSL https://get.docker.com/ | sh
 bash <(curl -s https://raw.githubusercontent.com/yishuiwang/AutoEnv/main/ssh_rsa.sh)
 ````
 
-

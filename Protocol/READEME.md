@@ -1,3 +1,8 @@
+## XUI
+```
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+```
+
 ## Hysteria
 
 hysteria地址 https://github.com/HyNetwork/hysteria

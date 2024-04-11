@@ -37,3 +37,11 @@ bash <(curl -s https://raw.githubusercontent.com/yishuiwang/TermKit/main/DevOps/
 bash <(curl -s https://raw.githubusercontent.com/yishuiwang/TermKit/main/DevOps/ssh_ed25519.sh)
 ```
 
+## 放行端口
+```
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+netfilter-persistent save
+```

@@ -1,0 +1,26 @@
+# frpc.toml
+serverAddr = "117.72.87.133"  # 替换为你的FRP服务器IP或域名
+serverPort = 7000                   # 与服务端bindPort一致
+
+# 示例2：暴露SSH服务（远程连接内网主机）
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 6000                   # 通过 server_ip:6000 连接SSH
+
+[[proxies]]
+name = "tcp_range"
+type = "tcp"  # 或 "udp"
+localIP = "127.0.0.1"
+localPort = "3000-40000"  # 本地端口范围
+remotePort = "3000-40000" # 服务端端口范围（范围大小必须与localPort一致）
+
+
+[[proxies]]
+name = "udp_range"
+type = "tcp"  # 或 "udp"
+localIP = "127.0.0.1"
+localPort = "3000-40000"  # 本地端口范围
+remotePort = "3000-40000" # 服务端端口范围（范围大小必须与localPort一致）
